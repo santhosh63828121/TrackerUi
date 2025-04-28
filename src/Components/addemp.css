@@ -1,0 +1,77 @@
+.add-student-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .add-student-container h2 {
+    text-align: center;
+  }
+  
+  .add-student-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-student-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .add-student-container form label {
+    font-weight: bold;
+  }
+  
+  .add-student-container form input,
+  .add-student-container form select {
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .add-student-container form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .add-student-container form button:hover {
+    background-color: #45a049;
+  }
+  
+  .add-student-container p {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .add-student-container {
+      width: 90%; 
+      padding: 15px; 
+    }
+  
+    .add-student-container form input,
+    .add-student-container form select {
+      font-size: 14px; 
+    }
+  
+    .add-student-container form button {
+      font-size: 14px; 
+      padding: 8px; 
+    }
+  
+    .add-student-container h2 {
+      font-size: 20px; 
+    }
+  }
+  

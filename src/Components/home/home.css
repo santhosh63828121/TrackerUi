@@ -1,0 +1,161 @@
+
+.App {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    text-align: center;
+    
+    
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+.manual-input {
+    margin-bottom: 20px;
+}
+
+.manual-input input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.manual-input input:focus {
+    border-color: #007bff;
+}
+
+.manual-input button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.manual-input button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* even smaller cards */
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 3px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card img {
+    width: 100%;
+    height: 80px; /* much smaller image */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.card h3 {
+    margin: 4px 0;
+    font-size: 12px; /* smaller title */
+    color: #222;
+}
+
+.card p {
+    margin: 2px 0;
+    font-size: 10px; /* smallest readable size */
+}
+
+.card.checked-in {
+    border-left: 3px solid #28a745;
+}
+
+.card.checked-out {
+    border-left: 3px solid #dc3545;
+}
+
+@media (max-width: 768px) {
+    .manual-input input {
+        width: 160px;
+    }
+
+    .manual-input button {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .card img {
+        height: 75px;
+    }
+
+    .card h3 {
+        font-size: 11px;
+    }
+
+    .card p {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .manual-input input {
+        width: 140px;
+    }
+
+    .manual-input button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 6px;
+    }
+
+    .card img {
+        height: 70px;
+    }
+
+    .card h3 {
+        font-size: 10px;
+    }
+
+    .card p {
+        font-size: 8px;
+    }
+}
