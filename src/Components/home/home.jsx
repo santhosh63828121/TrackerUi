@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react"; // Step 1
 import axios from "axios";
 import "./home.css";
 
@@ -6,6 +6,8 @@ function App() {
   const [students, setStudents] = useState([]);
   const [qrInput, setQrInput] = useState("");
   const [message, setMessage] = useState("");
+
+  const inputRef = useRef(null); // Step 2
 
   const fetchStudents = async () => {
     try {
@@ -30,17 +32,18 @@ function App() {
 
   useEffect(() => {
     fetchStudents();
+    inputRef.current?.focus(); // Step 3 - focus on load
   }, []);
 
-  // Auto-submit when a QR ID is entered completely
   useEffect(() => {
     if (qrInput.trim()) {
       const timeout = setTimeout(() => {
         handleScan(qrInput.trim());
         setQrInput(""); // clear input after scan
-      }, 500); // delay allows user to finish typing
+        inputRef.current?.focus(); // focus again after scan
+      }, 500);
 
-      return () => clearTimeout(timeout); // cancel on new input
+      return () => clearTimeout(timeout);
     }
   }, [qrInput]);
 
@@ -48,6 +51,7 @@ function App() {
     if (!qrInput.trim()) return;
     handleScan(qrInput.trim());
     setQrInput("");
+    inputRef.current?.focus(); // focus after manual submit
   };
 
   return (
@@ -56,6 +60,7 @@ function App() {
 
       <div className="manual-input">
         <input
+          ref={inputRef} // Set the input ref here
           type="text"
           value={qrInput}
           placeholder="Scan QR ID"
